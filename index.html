@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ph Tube</title>
+
+    <!-- daisy ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- tailwind css link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--custom css link -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- header section start -->
+    <header>
+      <!-- souldnt use l-r=padding/margin creating respnsive issues -->
+      <nav
+        class="w-11/12 mx-auto py-3 flex justify-between items-center border-b border-gray-200"
+      >
+        <div class="logo w-[100px]"><img src="./assets/Logo.png" alt="" /></div>
+        <div class="search">
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              required
+              placeholder="Search"
+            />
+          </label>
+        </div>
+        <div class="sort"><button class="btn">SORT</button></div>
+      </nav>
+
+      <!-- second nav section for categories start-->
+      <nav id="categories" class="py-3 flex justify-center gap-5"></nav>
+      <!-- second nav section for categories end-->
+    </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main>
+      <section
+        id="videos-container"
+        class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-10"
+      ></section>
+    </main>
+    <!-- main section end -->
+    <!-- modal start -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="modal_content"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <!-- modal end -->
+
+    <!-- js files link -->
+    <script src="./scripts/videos.js"></script>
+  </body>
+</html>
+
+<!-- 1. load and display data initially
+ 2. on click load and display data
+ 3. complex object accessing
+ 4. toggle active class functionality
+ 5. search functionality
+ 6. load and display single data
+ 7. display data in a modal
+ 8. load and display single category data 
+ 9. conditional rendering if array dont have any data
+ 10. conditional rendering:: if a value empty
+ 11. conditional rendering:: if a value length is zero-->
